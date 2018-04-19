@@ -1,0 +1,8 @@
+listenAddress: "127.0.0.1:8080"
+runInterval: 1m
+availabilityTimeout: 5m
+template:
+  namespace: openshift
+  name: django-psql-persistent
+  availabilityRoute: django-psql-persistent
+  parameters: # Empty, use template defaults
