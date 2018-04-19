@@ -1,0 +1,10 @@
+{
+  "files.exclude": {
+    "_output": true,
+    ".tito": true
+  },
+  "go.testTimeout": "5s",
+  "go.goroot": "/home/twiest-go/go-root/go-1.9.4",
+  "go.toolsGopath": "/home/twiest-go/projects/monitor-project-lifecycle",
+  "go.gopath": "/home/twiest-go/projects/monitor-project-lifecycle"
+}

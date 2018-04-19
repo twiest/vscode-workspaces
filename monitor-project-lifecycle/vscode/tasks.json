@@ -1,0 +1,41 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build",
+            "type": "shell",
+            "command": "GOPATH=${env:HOME}/projects/monitor-project-lifecycle go install -v github.com/openshift/monitor-project-lifecycle/cmd/monitor",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": "$go"
+        },
+        {
+            "label": "Dep Ensure",
+            "type": "shell",
+            "command": "cd ${env:HOME}/projects/monitor-project-lifecycle/src/github.com/openshift/monitor-project-lifecycle/ ; GOPATH=${env:HOME}/projects/monitor-project-lifecycle dep ensure",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": "$go"
+        },
+        {
+            "label": "Run",
+            "type": "shell",
+            "command": "bin/monitor run --logtostderr",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": "$go"
+        }
+    ]
+}
