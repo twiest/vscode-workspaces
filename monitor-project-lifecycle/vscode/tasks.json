@@ -30,7 +30,7 @@
         {
             "label": "Run",
             "type": "shell",
-            "command": "bin/monitor run --config ${env:HOME}/code/vscode-workspaces/monitor-project-lifecycle/config.yaml --logtostderr",
+            "command": "bin/monitor run -v4 --config ${env:HOME}/code/vscode-workspaces/monitor-project-lifecycle/config.yaml --logtostderr",
             "presentation": {
                 "reveal": "always",
                 "panel": "new"
