@@ -1,0 +1,42 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build",
+            "type": "shell",
+            "command": "GOPATH=${env:HOME}/projects/cluster-operator go install -v github.com/openshift/cluster-operator/cmd/cluster-operator github.com/openshift/cluster-operator/cmd/aws-machine-controller",
+            //"command": "cd ${env:HOME}/projects/cluster-operator/src/github.com/openshift/cluster-operator ; GOPATH=${env:HOME}/projects/cluster-operator/ make bin/cluster-operator",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": "$go"
+        },
+        {
+            "label": "Run controller-manager",
+            "type": "shell",
+            "command": "bin/cluster-operator controller-manager --controllers=* --k8s-kubeconfig ~/.kube/config --log-level debug -v 1",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": "$go"
+        },
+        {
+            "label": "Run controller-manager",
+            "type": "shell",
+            "command": "bin/cluster-operator controller-manager --controllers=* --k8s-kubeconfig ~/.kube/config --log-level debug -v 1",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": "$go"
+        }
+    ]
+}
