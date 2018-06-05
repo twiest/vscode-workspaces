@@ -4,14 +4,24 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Build",
+            "label": "Build w/ go",
             "type": "shell",
             "command": "GOPATH=${env:HOME}/projects/cluster-operator go install -v github.com/openshift/cluster-operator/cmd/cluster-operator github.com/openshift/cluster-operator/cmd/aws-machine-controller",
-            //"command": "cd ${env:HOME}/projects/cluster-operator/src/github.com/openshift/cluster-operator ; GOPATH=${env:HOME}/projects/cluster-operator/ make bin/cluster-operator",
+
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": "$go"
+        },
+        {
+            "label": "Build w/ make",
+            "type": "shell",
+            "command": "cd ${env:HOME}/projects/cluster-operator/src/github.com/openshift/cluster-operator ; GOPATH=${env:HOME}/projects/cluster-operator/ make bin/cluster-operator",
             "presentation": {
                 "reveal": "always",
                 "panel": "new"
