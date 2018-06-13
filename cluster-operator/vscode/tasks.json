@@ -21,7 +21,7 @@
         {
             "label": "Build w/ make",
             "type": "shell",
-            "command": "cd ${env:HOME}/projects/cluster-operator/src/github.com/openshift/cluster-operator ; GOPATH=${env:HOME}/projects/cluster-operator/ make bin/cluster-operator",
+            "command": "cd ${env:HOME}/projects/cluster-operator/src/github.com/openshift/cluster-operator ; GOPATH=${env:HOME}/projects/cluster-operator/ make bin/cluster-operator ; RC=$? ; echo RC: $? ; exit $RC",
             "presentation": {
                 "reveal": "always",
                 "panel": "new"
@@ -39,9 +39,19 @@
             "problemMatcher": "$go"
         },
         {
-            "label": "Run controller-manager",
+            "label": "Run make verify (go fmt)",
             "type": "shell",
-            "command": "bin/cluster-operator controller-manager --controllers=* --k8s-kubeconfig ~/.kube/config --log-level debug -v 1",
+            "command": "cd ${env:HOME}/projects/cluster-operator/src/github.com/openshift/cluster-operator ; GOPATH=${env:HOME}/projects/cluster-operator/ make verify ; RC=$? ; echo RC: $? ; exit $RC",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": "$go"
+        },
+        {
+            "label": "Run make test",
+            "type": "shell",
+            "command": "cd ${env:HOME}/projects/cluster-operator/src/github.com/openshift/cluster-operator ; GOPATH=${env:HOME}/projects/cluster-operator/ make test ; RC=$? ; echo RC: $? ; exit $RC",
             "presentation": {
                 "reveal": "always",
                 "panel": "new"
