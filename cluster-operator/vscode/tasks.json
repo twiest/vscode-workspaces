@@ -19,6 +19,16 @@
             "problemMatcher": "$go"
         },
         {
+            "label": "Build aws-actuator-test",
+            "type": "shell",
+            "command": "GOPATH=${env:HOME}/projects/cluster-operator go install -v github.com/openshift/cluster-operator/cmd/cluster-operator github.com/openshift/cluster-operator/contrib/cmd/aws-actuator-test",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": "$go"
+        },
+        {
             "label": "Build w/ make",
             "type": "shell",
             "command": "cd ${env:HOME}/projects/cluster-operator/src/github.com/openshift/cluster-operator ; GOPATH=${env:HOME}/projects/cluster-operator/ make bin/cluster-operator ; RC=$? ; echo RC: $? ; exit $RC",
@@ -52,6 +62,16 @@
             "label": "Run make test",
             "type": "shell",
             "command": "cd ${env:HOME}/projects/cluster-operator/src/github.com/openshift/cluster-operator ; GOPATH=${env:HOME}/projects/cluster-operator/ make test ; RC=$? ; echo RC: $? ; exit $RC",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": "$go"
+        },
+        {
+            "label": "Remove code coverage files",
+            "type": "shell",
+            "command": "rm -f /tmp/go-code-check /tmp/go-code-cover ; RC=$? ; echo RC: $? ; exit $RC",
             "presentation": {
                 "reveal": "always",
                 "panel": "new"
