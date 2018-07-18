@@ -31,7 +31,7 @@
         {
             "label": "Build w/ make",
             "type": "shell",
-            "command": "cd ${env:HOME}/projects/cluster-operator/src/github.com/openshift/cluster-operator ; GOPATH=${env:HOME}/projects/cluster-operator/ make bin/cluster-operator ; RC=$? ; echo RC: $? ; exit $RC",
+            "command": "cd ${env:HOME}/projects/cluster-operator/src/github.com/openshift/cluster-operator ; GOPATH=${env:HOME}/projects/cluster-operator/ make bin/cluster-operator ; RC=$? ; echo RC: $RC ; exit $RC",
             "presentation": {
                 "reveal": "always",
                 "panel": "new"
@@ -51,7 +51,7 @@
         {
             "label": "Run make verify (go fmt)",
             "type": "shell",
-            "command": "cd ${env:HOME}/projects/cluster-operator/src/github.com/openshift/cluster-operator ; GOPATH=${env:HOME}/projects/cluster-operator/ make verify ; RC=$? ; echo RC: $? ; exit $RC",
+            "command": "cd ${env:HOME}/projects/cluster-operator/src/github.com/openshift/cluster-operator ; GOPATH=${env:HOME}/projects/cluster-operator/ make verify ; RC=$? ; echo RC: $RC ; exit $RC",
             "presentation": {
                 "reveal": "always",
                 "panel": "new"
@@ -61,7 +61,7 @@
         {
             "label": "Run make test",
             "type": "shell",
-            "command": "cd ${env:HOME}/projects/cluster-operator/src/github.com/openshift/cluster-operator ; GOPATH=${env:HOME}/projects/cluster-operator/ make test ; RC=$? ; echo RC: $? ; exit $RC",
+            "command": "cd ${env:HOME}/projects/cluster-operator/src/github.com/openshift/cluster-operator ; GOPATH=${env:HOME}/projects/cluster-operator/ make test ; RC=$? ; echo RC: $RC ; exit $RC",
             "presentation": {
                 "reveal": "always",
                 "panel": "new"
@@ -71,7 +71,7 @@
         {
             "label": "Remove code coverage files",
             "type": "shell",
-            "command": "rm -f /tmp/go-code-check /tmp/go-code-cover ; RC=$? ; echo RC: $? ; exit $RC",
+            "command": "rm -f /tmp/go-code-check /tmp/go-code-cover ; RC=$? ; echo RC: $RC ; exit $RC",
             "presentation": {
                 "reveal": "always",
                 "panel": "new"
