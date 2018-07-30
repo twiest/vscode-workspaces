@@ -76,7 +76,18 @@
                 "reveal": "always",
                 "panel": "new"
             },
-            "problemMatcher": "$go"
+            "problemMatcher": "$go"  // Not right, but none of the other possible values are any better. Also, this line must be here apparently.
+        },
+        {
+            "label": "List CO API Objects",
+            "type": "shell",
+            "command": "curl -k https://localhost:8443/apis/clusteroperator.openshift.io/v1alpha1 ; RC=$? ; echo ; echo ; echo RC: $RC ; exit $RC",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": "$go"  // Not right, but none of the other possible values are any better. Also, this line must be here apparently.
         }
+        
     ]
 }
