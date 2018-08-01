@@ -5,6 +5,29 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Launch route53hostedzone controller",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "remotePath": "",
+            "port": 2345,
+            "host": "127.0.0.1",
+            "program": "${env:HOME}/projects/cluster-operator/src/github.com/openshift/cluster-operator/cmd/cluster-operator/main.go",
+            "env": {},
+            "args": [
+                "controller-manager",
+                "--controllers=route53hostedzone",
+                "--concurrent-route53hostedzone-syncs=1",
+                "--log-level",
+                "debug",
+                "-v",
+                "1",
+                "--k8s-kubeconfig",
+                "${env:HOME}/.kube/config"
+            ],
+            "showLog": true
+        },
+        {
             "name": "Launch remotemachineset controller",
             "type": "go",
             "request": "launch",
@@ -17,6 +40,7 @@
             "args": [
                 "controller-manager",
                 "--controllers=remotemachineset",
+                "--concurrent-remotemachineset-syncs=1",
                 "--log-level",
                 "debug",
                 "-v",
