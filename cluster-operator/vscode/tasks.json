@@ -6,7 +6,7 @@
         {
             "label": "Build w/ go",
             "type": "shell",
-            "command": "GOPATH=${env:HOME}/projects/cluster-operator go install -v github.com/openshift/cluster-operator/cmd/cluster-operator github.com/openshift/cluster-operator/cmd/aws-machine-controller",
+            "command": "GOPATH=${env:HOME}/projects/cluster-operator go install -v github.com/openshift/cluster-operator/cmd/cluster-operator",
 
             "group": {
                 "kind": "build",
@@ -19,9 +19,9 @@
             "problemMatcher": "$go"
         },
         {
-            "label": "Build aws-actuator-test",
+            "label": "Build coutil",
             "type": "shell",
-            "command": "GOPATH=${env:HOME}/projects/cluster-operator go install -v github.com/openshift/cluster-operator/cmd/cluster-operator github.com/openshift/cluster-operator/contrib/cmd/aws-actuator-test",
+            "command": "GOPATH=${env:HOME}/projects/cluster-operator go install -v github.com/openshift/cluster-operator/contrib/cmd/coutil",
             "presentation": {
                 "reveal": "always",
                 "panel": "new"
@@ -69,9 +69,29 @@
             "problemMatcher": "$go"
         },
         {
+            "label": "Build mocks",
+            "type": "shell",
+            "command": "cd ${env:HOME}/projects/cluster-operator/src/github.com/openshift/cluster-operator ; GOPATH=${env:HOME}/projects/cluster-operator/ make .generate_mocks ; RC=$? ; echo RC: $RC ; exit $RC",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": "$go"  // Not right, but none of the other possible values are any better. Also, this line must be here apparently.
+        },
+        {
             "label": "Remove code coverage files",
             "type": "shell",
             "command": "rm -f /tmp/go-code-check /tmp/go-code-cover ; RC=$? ; echo RC: $RC ; exit $RC",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": "$go"  // Not right, but none of the other possible values are any better. Also, this line must be here apparently.
+        },
+        {
+            "label": "Kill all debug sessions",
+            "type": "shell",
+            "command": "pgrep -f goDebug | xargs kill -9",
             "presentation": {
                 "reveal": "always",
                 "panel": "new"
