@@ -51,6 +51,23 @@
             "showLog": true
         },
         {
+            "name": "Launch coutil verify-imports",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "remotePath": "",
+            "port": 2345,
+            "host": "127.0.0.1",
+            "program": "${env:HOME}/projects/cluster-operator/src/github.com/openshift/cluster-operator/contrib/cmd/coutil/main.go",
+            "env": {},
+            "args": [
+                "verify-imports",
+                "--rules=${env:HOME}/projects/cluster-operator/src/github.com/openshift/cluster-operator/build/verify-imports/import-rules.yaml",
+                "${env:HOME}/projects/cluster-operator/src/github.com/openshift/cluster-operator/pkg/controller/route53hostedzone/route53hostedzone_controller.go",
+            ],
+            "showLog": true
+        },
+        {
             "name": "Launch aws-actuator-test",
             "type": "go",
             "request": "launch",

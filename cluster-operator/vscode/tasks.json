@@ -6,22 +6,12 @@
         {
             "label": "Build w/ go",
             "type": "shell",
-            "command": "GOPATH=${env:HOME}/projects/cluster-operator go install -v github.com/openshift/cluster-operator/cmd/cluster-operator",
+            "command": "GOPATH=${env:HOME}/projects/cluster-operator go install -v github.com/openshift/cluster-operator/cmd/cluster-operator github.com/openshift/cluster-operator/contrib/cmd/coutil",
 
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
-            "presentation": {
-                "reveal": "always",
-                "panel": "new"
-            },
-            "problemMatcher": "$go"
-        },
-        {
-            "label": "Build coutil",
-            "type": "shell",
-            "command": "GOPATH=${env:HOME}/projects/cluster-operator go install -v github.com/openshift/cluster-operator/contrib/cmd/coutil",
             "presentation": {
                 "reveal": "always",
                 "panel": "new"
