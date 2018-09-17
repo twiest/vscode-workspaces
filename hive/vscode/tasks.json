@@ -1,0 +1,72 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build w/ go",
+            "type": "shell",
+            "command": "GOPATH=${env:HOME}/projects/hive go install -v github.com/openshift/hive/cmd/manager",
+
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": "$go"
+        },
+        {
+            "label": "Build w/ make",
+            "type": "shell",
+            "command": "cd ${env:HOME}/projects/hive/src/github.com/openshift/hive ; GOPATH=${env:HOME}/projects/hive/ make manager; RC=$? ; echo RC: $RC ; exit $RC",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": "$go"
+        },
+        {
+            "label": "Run make verify (go fmt)",
+            "type": "shell",
+            "command": "cd ${env:HOME}/projects/hive/src/github.com/openshift/hive ; GOPATH=${env:HOME}/projects/hive/ make verify ; RC=$? ; echo RC: $RC ; exit $RC",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": "$go"
+        },
+        {
+            "label": "Run make test",
+            "type": "shell",
+            "command": "cd ${env:HOME}/projects/hive/src/github.com/openshift/hive ; GOPATH=${env:HOME}/projects/hive/ make test ; RC=$? ; echo RC: $RC ; exit $RC",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": "$go"
+        },
+        {
+            "label": "Remove code coverage files",
+            "type": "shell",
+            "command": "rm -f /tmp/go-code-check /tmp/go-code-cover ; RC=$? ; echo RC: $RC ; exit $RC",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": "$go"  // Not right, but none of the other possible values are any better. Also, this line must be here apparently.
+        },
+        {
+            "label": "Kill all debug sessions",
+            "type": "shell",
+            "command": "pgrep -f goDebug | xargs kill -9",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": "$go"  // Not right, but none of the other possible values are any better. Also, this line must be here apparently.
+        }
+    ]
+}

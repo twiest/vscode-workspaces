@@ -1,0 +1,12 @@
+{
+  "files.exclude": {
+    "_output": true,
+    ".tito": true
+  },
+  "go.testTimeout": "60s",
+  "go.goroot": "/home/twiest/go-root/go-1.9.4",
+  "go.toolsGopath": "/home/twiest/projects/hive",
+  "go.formatTool": "gofmt",
+  "go.formatFlags": ["-s"],
+  "go.gopath": "/home/twiest/projects/hive"
+}
