@@ -59,6 +59,17 @@
             "problemMatcher": "$go"  // Not right, but none of the other possible values are any better. Also, this line must be here apparently.
         },
         {
+            "label": "Dep Ensure",
+            "type": "shell",
+            "command": "cd ${env:HOME}/projects/hive/src/github.com/openshift/hive/ ; GOPATH=${env:HOME}/projects/hive dep ensure -v",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": "$go"
+        },
+
+        {
             "label": "Kill all debug sessions",
             "type": "shell",
             "command": "pgrep -f goDebug | xargs kill -9",
