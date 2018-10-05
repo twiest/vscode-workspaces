@@ -4,7 +4,7 @@
     ".tito": true
   },
   "go.testTimeout": "60s",
-  "go.goroot": "/home/twiest/go-root/go-1.9.4",
+  "go.goroot": "/home/twiest/.gvm/gos/go1.10.4",
   "go.toolsGopath": "/home/twiest/projects/hive",
   "go.formatTool": "gofmt",
   "go.formatFlags": ["-s"],

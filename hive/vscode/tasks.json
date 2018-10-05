@@ -6,7 +6,7 @@
         {
             "label": "Build w/ go",
             "type": "shell",
-            "command": "GOPATH=${env:HOME}/projects/hive go install -v github.com/openshift/hive/cmd/manager",
+            "command": "GOPATH=${env:HOME}/projects/hive go install -v github.com/openshift/hive/cmd/manager github.com/openshift/hive/contrib/cmd/hiveutil",
 
             "group": {
                 "kind": "build",
@@ -29,7 +29,7 @@
             "problemMatcher": "$go"
         },
         {
-            "label": "Run make verify (go fmt)",
+            "label": "Run make verify",
             "type": "shell",
             "command": "cd ${env:HOME}/projects/hive/src/github.com/openshift/hive ; GOPATH=${env:HOME}/projects/hive/ make verify ; RC=$? ; echo RC: $RC ; exit $RC",
             "presentation": {
