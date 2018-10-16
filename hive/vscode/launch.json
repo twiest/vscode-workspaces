@@ -21,6 +21,22 @@
             "showLog": true
         },
         {
+            "name": "Launch hiveadmission",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "remotePath": "",
+            "port": 2345,
+            "host": "127.0.0.1",
+            "program": "${env:HOME}/projects/hive/src/github.com/openshift/hive/cmd/hiveadmission/main.go",
+            "env": {},
+            "args": [
+                "--secure-port=8443",
+                "--audit-log-path=-"
+            ],
+            "showLog": true
+        },
+        {
             "name": "Launch hiveutil verify-imports",
             "type": "go",
             "request": "launch",
