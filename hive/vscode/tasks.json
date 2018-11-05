@@ -61,7 +61,7 @@
         {
             "label": "Dep Ensure",
             "type": "shell",
-            "command": "cd ${env:HOME}/projects/hive/src/github.com/openshift/hive/ ; GOPATH=${env:HOME}/projects/hive time dep ensure -v",
+            "command": "cd ${env:HOME}/projects/hive/src/github.com/openshift/hive/ ; GOPATH=${env:HOME}/projects/hive time dep ensure -v ; RC=$? ; echo RC: $RC ; exit $RC",
             "presentation": {
                 "reveal": "always",
                 "panel": "new"
