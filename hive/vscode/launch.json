@@ -30,8 +30,9 @@
             "host": "127.0.0.1",
             "program": "${env:HOME}/projects/hive/src/github.com/openshift/hive/cmd/hiveadmission/main.go",
             "env": {
-                "KUBERNETES_SERVICE_HOST": "127.0.0.1",
-                "KUBERNETES_SERVICE_PORT": "8443"
+                //"KUBERNETES_SERVICE_HOST": "127.0.0.1",
+                "KUBERNETES_SERVICE_HOST": "192.168.100.159",
+                "KUBERNETES_SERVICE_PORT": "9443"
             },
             "args": [
                 "--secure-port=9443",
