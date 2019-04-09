@@ -1,0 +1,12 @@
+{
+  "files.exclude": {
+    "_output": true,
+    ".tito": true
+  },
+  "go.testTimeout": "60s",
+  "go.goroot": "/home/dev/.gvm/gos/go1.11.7",  
+  "go.toolsGopath": "/home/dev/projects/controller-tools",
+  "go.formatTool": "gofmt",
+  "go.formatFlags": ["-s"],
+  "go.gopath": "/home/dev/projects/controller-tools"
+}
