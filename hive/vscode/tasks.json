@@ -6,7 +6,7 @@
         {
             "label": "Build w/ go",
             "type": "shell",
-            "command": "GOPATH=${env:HOME}/projects/hive time go install -v github.com/openshift/hive/cmd/manager github.com/openshift/hive/cmd/hiveadmission github.com/openshift/hive/contrib/cmd/hiveutil",
+            "command": "GOPATH=${env:HOME}/projects/hive time go install -v github.com/openshift/hive/cmd/operator github.com/openshift/hive/cmd/manager github.com/openshift/hive/cmd/hiveadmission github.com/openshift/hive/contrib/cmd/hiveutil",
 
             "group": {
                 "kind": "build",

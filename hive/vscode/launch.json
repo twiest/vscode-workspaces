@@ -21,6 +21,22 @@
             "showLog": true
         },
         {
+            "name": "Launch hive operator",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "remotePath": "",
+            "port": 2345,
+            "host": "127.0.0.1",
+            "program": "${env:HOME}/projects/hive/src/github.com/openshift/hive/cmd/operator/main.go",
+            "env": {},
+            "args": [
+                "--log-level",
+                "debug"
+            ],
+            "showLog": true
+        },
+        {
             "name": "Launch hiveadmission",
             "type": "go",
             "request": "launch",

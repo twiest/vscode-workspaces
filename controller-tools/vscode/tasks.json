@@ -6,7 +6,7 @@
         {
             "label": "Build w/ go",
             "type": "shell",
-            "command": "GOPATH=${env:HOME}/projects/controller-tools time go install -v github.com/kubernetes-sigs/controller-tools/cmd/controller-gen github.com/kubernetes-sigs/controller-tools/cmd/crd github.com/kubernetes-sigs/controller-tools/cmd/type-scaffold",
+            "command": "GOPATH=${env:HOME}/projects/controller-tools time go install -v github.com/kubernetes-sigs/controller-tools/cmd/controller-gen github.com/kubernetes-sigs/controller-tools/cmd/type-scaffold",
             "group": {
                 "kind": "build",
                 "isDefault": true
@@ -20,7 +20,7 @@
         {
             "label": "Run test.sh",
             "type": "shell",
-            "command": "cd ${env:HOME}/projects/controller-tools/src/github.com/kubernetes-sigs/controller-tools ; GOPATH=${env:HOME}/projects/controller-tools/ time ./test.sh ; RC=$? ; echo RC: $RC ; exit $RC",
+            "command": "cd ${env:HOME}/projects/controller-tools/src/github.com/kubernetes-sigs/controller-tools ; GOPATH=${env:HOME}/projects/controller-tools/ GO111MODULE=on time ./test.sh ; RC=$? ; echo RC: $RC ; exit $RC",
             "presentation": {
                 "reveal": "always",
                 "panel": "new"
