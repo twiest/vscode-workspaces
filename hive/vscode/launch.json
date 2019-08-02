@@ -13,10 +13,12 @@
             "port": 2345,
             "host": "127.0.0.1",
             "program": "${env:HOME}/projects/hive/src/github.com/openshift/hive/cmd/manager/main.go",
-            "env": {},
+            "env": {
+                "HIVE_VELERO_BACKUP": "TRUE",
+            },
             "args": [
                 "--log-level",
-                "debug"
+                "debug",
             ],
             "showLog": true
         },
