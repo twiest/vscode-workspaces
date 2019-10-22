@@ -1,0 +1,52 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build w/ go",
+            "type": "shell",
+            "command": "GOPATH=${env:HOME}/projects/cloud-credential-operator time go install -v github.com/openshift/cloud-credential-operator/cmd/manager",
+
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": "$go"
+        },
+        {
+            "label": "Build w/ make",
+            "type": "shell",
+            "command": "cd ${env:HOME}/projects/cloud-credential-operator/src/github.com/openshift/cloud-credential-operator ; GOPATH=${env:HOME}/projects/cloud-credential-operator/ time make manager; RC=$? ; echo RC: $RC ; exit $RC",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": "$go"
+        },
+        {
+            "label": "Run make test",
+            "type": "shell",
+            "command": "cd ${env:HOME}/projects/cloud-credential-operator/src/github.com/openshift/cloud-credential-operator ; GOPATH=${env:HOME}/projects/cloud-credential-operator/ time make test ; RC=$? ; echo RC: $RC ; exit $RC",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": "$go"
+        },
+        {
+            "label": "Kill all debug sessions",
+            "type": "shell",
+            "command": "pgrep -f goDebug | xargs kill -9",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": "$go"  // Not right, but none of the other possible values are any better. Also, this line must be here apparently.
+        }
+    ]
+}
