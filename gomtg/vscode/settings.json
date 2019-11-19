@@ -1,0 +1,11 @@
+{
+  "files.exclude": {
+    "_output": true,
+    ".tito": true
+  },
+  "go.testTimeout": "60s",
+  "go.inferGopath": true,
+  "go.formatTool": "gofmt",
+  "go.formatFlags": ["-s"],
+  "workbench.tree.renderIndentGuides":"always",
+}
