@@ -4,7 +4,7 @@
     ".tito": true
   },
   "go.testTimeout": "60s",
-  "go.inferGopath": true,
+  "go.inferGopath": false,
   "go.formatTool": "gofmt",
   "go.formatFlags": ["-s"],
   "workbench.tree.renderIndentGuides":"always",

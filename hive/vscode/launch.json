@@ -74,6 +74,22 @@
                 "${env:HOME}/projects/hive/src/github.com/openshift/hive/pkg/controller/dnszone/dnszone_controller.go"
             ],
             "showLog": true
+        },
+        {
+            "name": "Launch hiveutil label-objects",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "remotePath": "",
+            "port": 2345,
+            "host": "127.0.0.1",
+            "program": "${env:HOME}/projects/hive/src/github.com/openshift/hive/contrib/cmd/hiveutil/main.go",
+            "env": {},
+            "args": [
+                "label-objects",
+                "--dry-run"
+            ],
+            "showLog": true
         }
     ]
 }
